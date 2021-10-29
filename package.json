@@ -1,0 +1,19 @@
+{
+  "name": "team-profile-generator",
+  "version": "1.0.0",
+  "description": "This allows profiles to be generated for employees on a software team",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zachary-berdell-elliott/team-profile-generator.git"
+  },
+  "author": "Zachary Elliott",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zachary-berdell-elliott/team-profile-generator/issues"
+  },
+  "homepage": "https://github.com/zachary-berdell-elliott/team-profile-generator#readme"
+}
