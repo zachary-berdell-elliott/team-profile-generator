@@ -23,5 +23,5 @@ describe("Employee", () => {
         const email = "name@example.com";
         const empEmail = new Employee("name", 1, email);
         expect(empEmail.email).toEqual(email);
-    })
+    });
 });
