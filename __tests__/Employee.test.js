@@ -1,4 +1,5 @@
 const Employee = require("../lib/Employee");
+const jest = require("jest");
 
 describe("Employee", () => {
     //Test for name entry
