@@ -7,35 +7,18 @@ const Intern = require("./lib/Intern");
 const Engineer = require("./lib/Engineer");
 const writeToDist = path.resolve(__dirname, "dist");
 const filePath = path.join(writeToDist, "new-team.html");
-const writeHtml = require("src/htmlTemplate.js");
+const writeHtml = require("./src/htmlTemplate");
 const newTeamArray = [];
 
 //Variable so the user can decide if they want to add a new member or not
-var addNew = true;
 
-//Runs while the user still wants to add a new member
-while(addNew){
-    inquirer
-    .prompt({
-        type: "list",
-        message: "Would you like to add a new member?",
-        name: "userCheck",
-        choices: ["Yes", "No"]
-    })
-    .then((data) => {
-        if(data.userCheck == "Yes"){
-            questionAsker();
-        }
-        else{
-            addNew = false;
-        }
-    })
-} 
+
+
 
 //Function for asking the questions to generate the html
 function questionAsker() {
     function newManager(){
-        inquirer.prompt({
+        inquirer.prompt([{
             type: "input",
             name: "mName",
             message: "What is the managers name?"
@@ -57,10 +40,11 @@ function questionAsker() {
             type: "input",
             name: "mOffice",
             message: "What is the managers office number?"
-        }).then((response) => {
+        }]).then((response) => {
             const newManager = new Manager(response.mName, response.mId, response.mEmail, response.mOffice);
             newTeamArray.push(newManager);
             //Place new employee function
+            newEmployee();
         })
     }
     function newEmployee(){
@@ -88,4 +72,10 @@ function questionAsker() {
     })
 //} 
     }
+    function createCards(){
+        fs.writeFileSync(filePath, writeHtml(newTeamArray), "utf-8")
+    }
+    newManager();
+
 }
+questionAsker();
