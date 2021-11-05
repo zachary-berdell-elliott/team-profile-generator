@@ -11,7 +11,7 @@ const writeHtml = require("src/htmlTemplate.js");
 const newTeamArray = [];
 
 //Variable so the user can decide if they want to add a new member or not
-/*var addNew = true;
+var addNew = true;
 
 //Runs while the user still wants to add a new member
 while(addNew){
@@ -30,7 +30,7 @@ while(addNew){
             addNew = false;
         }
     })
-} */
+} 
 
 //Function for asking the questions to generate the html
 function questionAsker() {
@@ -59,6 +59,33 @@ function questionAsker() {
             message: "What is the managers office number?"
         }).then((response) => {
             const newManager = new Manager(response.mName, response.mId, response.mEmail, response.mOffice);
+            newTeamArray.push(newManager);
+            //Place new employee function
         })
+    }
+    function newEmployee(){
+ //       var addNew = true;
+
+//Runs while the user still wants to add a new member
+//while(addNew){
+    inquirer
+    .prompt({
+        type: "list",
+        message: "Would you like to add a new member?",
+        name: "userCheck",
+        choices: ["Engineer", "Intern", "No"]
+    })
+    .then((data) => {
+        if(data.userCheck === "Engineer"){
+            newEngineer();
+        }
+        if(data.userCheck === "Intern"){
+            newIntern();
+        }
+        else{
+            createCards();
+        }
+    })
+//} 
     }
 }
