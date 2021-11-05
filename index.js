@@ -34,5 +34,31 @@ while(addNew){
 
 //Function for asking the questions to generate the html
 function questionAsker() {
-    
+    function newManager(){
+        inquirer.prompt({
+            type: "input",
+            name: "mName",
+            message: "What is the managers name?"
+        },
+        
+        {
+            type: "input",
+            name: "mEmail",
+            message: "What is the managers email?"
+        },
+        
+        {
+            type: "input",
+            name: "mId",
+            message: "What is the managers id?"
+        },
+        
+        {
+            type: "input",
+            name: "mOffice",
+            message: "What is the managers office number?"
+        }).then((response) => {
+            const newManager = new Manager(response.mName, response.mId, response.mEmail, response.mOffice);
+        })
+    }
 }
