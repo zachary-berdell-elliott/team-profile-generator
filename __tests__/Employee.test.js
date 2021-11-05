@@ -1,5 +1,4 @@
 const Employee = require("../lib/Employee");
-const jest = require("jest");
 
 describe("Employee", () => {
     //Test for name entry
@@ -20,9 +19,10 @@ describe("Employee", () => {
     });
 
     describe("Email", () => {
-        it("Can set an email through the constructor arguments");
-        const email = "name@example.com";
-        const empEmail = new Employee("name", 1, email);
-        expect(empEmail.email).toEqual(email);
+        it("Can set an email through the constructor arguments", () => {
+            const email = "name@example.com";
+            const empEmail = new Employee("name", 1, email);
+            expect(empEmail.email).toEqual(email);
+        });
     });
 });

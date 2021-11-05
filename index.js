@@ -5,9 +5,13 @@ const path = require("path");
 const Manager = require("./lib/Manager");
 const Intern = require("./lib/Intern");
 const Engineer = require("./lib/Engineer");
+const writeToDist = path.resolve(__dirname, "dist");
+const filePath = path.join(writeToDist, "new-team.html");
+const writeHtml = require("src/htmlTemplate.js");
+const newTeamArray = [];
 
 //Variable so the user can decide if they want to add a new member or not
-var addNew = true;
+/*var addNew = true;
 
 //Runs while the user still wants to add a new member
 while(addNew){
@@ -26,7 +30,7 @@ while(addNew){
             addNew = false;
         }
     })
-}
+} */
 
 //Function for asking the questions to generate the html
 function questionAsker() {
