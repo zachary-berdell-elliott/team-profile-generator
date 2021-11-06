@@ -10,36 +10,32 @@ const filePath = path.join(writeToDist, "new-team.html");
 const writeHtml = require("./src/htmlTemplate");
 const newTeamArray = [];
 
-//Variable so the user can decide if they want to add a new member or not
-
-
-
-
 //Function for asking the questions to generate the html
 function questionAsker() {
-    function newManager(){
+    //Function for creating the manager card
+     function newManager(){
         inquirer.prompt([{
             type: "input",
             name: "mName",
-            message: "What is the managers name?"
+            message: "What is the manager's name?"
         },
         
         {
             type: "input",
             name: "mEmail",
-            message: "What is the managers email?"
+            message: "What is the manager's email?"
         },
         
         {
             type: "input",
             name: "mId",
-            message: "What is the managers id?"
+            message: "What is the manager's id?"
         },
         
         {
             type: "input",
             name: "mOffice",
-            message: "What is the managers office number?"
+            message: "What is the manager's office number?"
         }]).then((response) => {
             const newManager = new Manager(response.mName, response.mId, response.mEmail, response.mOffice);
             newTeamArray.push(newManager);
@@ -47,11 +43,70 @@ function questionAsker() {
             newEmployee();
         })
     }
-    function newEmployee(){
- //       var addNew = true;
 
-//Runs while the user still wants to add a new member
-//while(addNew){
+    function newIntern(){
+        inquirer.prompt([{
+            type: "input",
+            name: "iName",
+            message: "What is the intern's name?"
+        },
+        
+        {
+            type: "input",
+            name: "iEmail",
+            message: "What is the intern's email?"
+        },
+        
+        {
+            type: "input",
+            name: "iId",
+            message: "What is the intern's id?"
+        },
+        
+        {
+            type: "input",
+            name: "iSchool",
+            message: "What is the intern's school?"
+        }]).then((response) => {
+            const newIntern = new Intern(response.iName, response.iId, response.iEmail, response.iSchool);
+            newTeamArray.push(newIntern);
+            //Place new employee function
+            newEmployee();
+        })
+    }
+
+    function newEngineer(){
+        inquirer.prompt([{
+            type: "input",
+            name: "eName",
+            message: "What is the engineer's name?"
+        },
+        
+        {
+            type: "input",
+            name: "eEmail",
+            message: "What is the engineer's email?"
+        },
+        
+        {
+            type: "input",
+            name: "eId",
+            message: "What is the engineer's id?"
+        },
+        
+        {
+            type: "input",
+            name: "eGithub",
+            message: "What is the engineer's Github?"
+        }]).then((response) => {
+            const newIntern = new Engineer(response.eName, response.eId, response.eEmail, response.eSchool);
+            newTeamArray.push(newIntern);
+            //Place new employee function
+            newEmployee();
+        })
+    }
+
+    function newEmployee(){
     inquirer
     .prompt({
         type: "list",
@@ -70,7 +125,6 @@ function questionAsker() {
             createCards();
         }
     })
-//} 
     }
     function createCards(){
         fs.writeFileSync(filePath, writeHtml(newTeamArray), "utf-8")
