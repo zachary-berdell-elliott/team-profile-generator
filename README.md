@@ -12,7 +12,7 @@ This is an application that is designed to generate profile for people on a soft
 * [Questions](#questions)
 
 ## Installation 
-The application can be installed by running git clone repository. After that you will run npm i in the directory it was cloned to.
+The application can be installed by running ==git clone https://github.com/zachary-berdell-elliott/team-profile-generator.git==. After that you will run ==npm i== in the directory it was cloned to.
 
 ## Usage 
 It is used in the terminal to generate a team profile. It first prompts the user to enter information for the team manager. After that the user can continue to add engineers, interns, or to finish writing the file
