@@ -99,7 +99,7 @@ function questionAsker() {
             name: "eGithub",
             message: "What is the engineer's Github?"
         }]).then((response) => {
-            const newIntern = new Engineer(response.eName, response.eId, response.eEmail, response.eSchool);
+            const newIntern = new Engineer(response.eName, response.eId, response.eEmail, response.eGithub);
             newTeamArray.push(newIntern);
             //Place new employee function
             newEmployee();
