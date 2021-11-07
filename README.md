@@ -3,6 +3,8 @@
 ## Description
 This is an application that is designed to generate profile for people on a software engineering team. It runs in the command line and generates profiles of each team member entered to an html file.
 
+![Gif of the application](./assets/profile-generator.gif)
+
 ## Table of Contents
 * [Installation](#installation)
 * [Usage](#usage)
