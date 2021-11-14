@@ -1,9 +1,9 @@
 # Team Profile Generator [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
-This is an application that is designed to generate profile for people on a software engineering team. It runs in the command line and generates profiles of each team member entered to an html file.
+This is an application that is designed to generate profile for people on a software engineering team. It runs in the command line and generates profiles of each team member entered to an html file. [The walkthrough video can be viewed here.](https://drive.google.com/file/d/1sdbJV4DdK4ZfIuKaOEZp7OhpePbuMneN/view?usp=sharing)
 
-![Gif of the application](./assets/profile-generator.gif)
+![Image of the application](./assets/profile-generator.png)
 
 ## Table of Contents
 * [Installation](#installation)
